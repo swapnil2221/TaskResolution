@@ -1,0 +1,23 @@
+﻿<div class="container">
+    <h2>Student List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>BirthDate</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data">
+                <td ng-bind="item.Number"></td>
+                <td ng-bind="item.FirstName"></td>
+                <td ng-bind="item.MidName"></td>
+                <td ng-bind="item.BirthDate"></td>              
+            </tr>
+
+        </tbody>
+    </table>
+</div>

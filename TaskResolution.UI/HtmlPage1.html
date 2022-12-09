@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <base href="/" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Student And Subject Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    @*
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="navbar-collapse collapse" ng-app="studentApp">
+            <ul class="nav navbar-nav">
+
+                <li><a ng-href="#/StudentList"> Student List</a></li>
+                <li><a ng-href="#/RegisterStudent">RegisterStudent</a></li>
+                <li><a ng-href="#/Subject"> Subject List</a></li>
+                <li><a ng-href="#/RegisterSubject">Register Subject</a></li>
+            </ul>
+            <div class="jumbotron" ng-controller="myCtrl">
+                <ng-view></ng-view>
+                @*<h1>Task Resolution</h1>*@
+
+
+
+            </div>
+        </div>
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Student Application</p>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+
+
+    @*
+    <script src="~/Content/scripts/extenstion/angular.js"></script>
+
+    <script src="~/Content/scripts/extenstion/angular-route.js"></script>*@
+    <script src="~/Content/scripts/pages/app.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Content/scripts/pages/homeController.js"></script>
+    <script src="~/Content/scripts/pages/_routing.js"></script>
+    <script src="~/Content/scripts/pages/service.js"></script>
+    <script src="~/Content/scripts/pages/Subject/subject.js"></script>
+    <script src="~/Content/scripts/pages/Student/student.js"></script>
+
+</body>
+</html>

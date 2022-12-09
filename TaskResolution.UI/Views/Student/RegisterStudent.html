@@ -1,0 +1,53 @@
+﻿
+
+<div class="container">
+    <h2>Register Student</h2>
+    <h3 ng-if="isDisplay">{{msz}}</h3>
+    <form>
+        <div class="form-group">
+            <label for="fname">Roll Number:</label>
+            <input type="text" class="form-control" id="fname" ng-model="rNo" placeholder="Enter first name">
+        </div>
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" class="form-control" id="fname" ng-model="fname" placeholder="Enter first name">
+        </div>
+        <div class="form-group">
+            <label for="mname">Mid Name:</label>
+            <input type="text" class="form-control" id="mname" ng-model="mname" placeholder="Enter Middle name">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" class="form-control" id="lname" ng-model="lname" placeholder="Enter last name">
+        </div>
+        <div class="form-group">
+            <label for="dob">Birth Date:</label>
+            <input type="date" class="form-control" id="dob" ng-model="dob" placeholder="Enter DOB">
+        </div>
+        <div class="form-group">
+            <label for="sub">Subjects:</label>
+            <div class="btn">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    select subjects
+                </button>
+                <div class="dropdown-menu">
+
+                    <ul class="dropdown-item" ng-repeat="item in subjectDropdown">
+                        <li>
+
+                            <div class="form-check">
+                                <input class="form-check-input" ng-model="item.checked" ng-change='subjectChecked(item)' type="checkbox" value="" id="Checkme1" />
+                                <label class="form-check-label" for="Checkme1" ng-bind="item.Name"></label>
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-default" ng-click="save()">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,16 @@
+﻿<div class="container">
+    <h2>Register Subject </h2>
+    <h3 ng-if="isDisplay">{{msz}}</h3>
+    <form>
+        <div class="form-group">
+            <label for="subjectName">Subject name:</label>
+            <input type="text" class="form-control" ng-model="sName" required id="subjectName" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+            <label for="code">Subject Code:</label>
+            <input type="text" class="form-control" ng-model="sCode" required id="code" placeholder="Enter password">
+        </div>
+
+        <button type="submit" class="btn btn-default" ng-click="save()">Submit</button>
+    </form>
+</div>

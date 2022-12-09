@@ -1,0 +1,91 @@
+﻿@model TaskResolution.UI.RouteConfig
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+    <script data-require="angularjs@1.5.8" data-semver="1.5.8" src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js"></script>
+    <script data-require="angular-route@1.5.8" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+
+    <link rel="stylesheet" href="~/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/Site.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.css.map" />
+
+    <script src="~/Scripts/extenstion/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/extenstion/jquery-3.4.1.slim.js"></script>
+    <script src="~/Scripts/extenstion/jquery.validate.js"></script>
+
+    <script src="~/Scripts/extenstion/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/extenstion/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/extenstion/jquery.validate.js"></script>
+    <script src="~/Scripts/extenstion/bootstrap.js"></script>
+    <script src="~/Scripts/extenstion/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/extenstion/jquery-3.4.1.slim.js"></script>
+    <script src="~/Scripts/extenstion/jquery.validate.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Student And Subject Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                    @*
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        <div class="navbar-collapse collapse" ng-app="agularApp">
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a ng-href="#!/home">Home</a>
+                </li>
+                <li>
+                    <a ng-href="#!/subjectlist">subjectlist</a>
+                </li>
+                <li>
+                    <a ng-href="#!/registersubject">registersubject</a>
+                </li>
+                <li>
+                    <a ng-href="#!/registerstudent">registerstudent</a>
+                </li>
+                <li>
+                    <a ng-href="#!/studentlist">studentlist</a>
+                </li>
+
+            </ul>
+            <div class="jumbotron"> <ng-view></ng-view></div>
+           
+            <script src="~/Scripts/app.js"></script>
+            <script src="~/Scripts/controllers.js"></script>
+            <!--own js -->
+            @*<script src="~/Scripts/app.js"></script>*@
+        </div>
+    </div>
+
+</body>
+</html>
